@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.airsoft.goodwin.Inventory.InventoryActivity"
+    tools:showIn="@layout/app_bar_inventory">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/inventory_content_layout">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/inventory"
+            android:id="@+id/inventory_content_label"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <GridView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/inventory_content_grid"
+            android:layout_below="@+id/inventory_content_label"
+            android:verticalSpacing="0dp"
+            android:stretchMode="spacingWidthUniform"
+            android:listSelector="@null"
+            android:columnWidth="60dp"
+            android:numColumns="auto_fit" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/inventory_loading_layout"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/inventory_loading_progressbar"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:indeterminate="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/inventory_error_layout"
+        android:padding="16dp"
+        android:visibility="gone">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/refresh"
+            android:id="@+id/inventory_error_refresh"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/server_connection_error"
+            android:id="@+id/inventory_error_label"
+            android:layout_above="@+id/inventory_error_refresh"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_vertical|center_horizontal" />
+    </RelativeLayout>
+</RelativeLayout>

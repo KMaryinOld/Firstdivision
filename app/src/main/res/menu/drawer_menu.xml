@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_private_office"
+            android:icon="@drawable/ic_home"
+            android:title="@string/privateOffice"/>
+
+        <item
+            android:id="@+id/nav_inventory"
+            android:icon="@drawable/ic_view_module"
+            android:title="@string/title_activity_inventory"/>
+
+        <item
+            android:id="@+id/nav_duty"
+            android:icon="@drawable/ic_view_quilt"
+            android:title="@string/duty"/>
+
+        <item
+            android:id="@+id/nav_linen"
+            android:icon="@drawable/ic_basket"
+            android:title="@string/linen_extradition"/>
+
+        <item
+            android:id="@+id/nav_comrades"
+            android:icon="@drawable/ic_account_card_details"
+            android:title="@string/title_activity_comrades"/>
+
+        <item
+            android:id="@+id/nav_chat"
+            android:icon="@drawable/ic_chat"
+            android:title="@string/title_activity_chat"/>
+    </group>
+
+    <item
+        android:id="@+id/nav_exit"
+        android:icon="@drawable/ic_logout"
+        android:title="@string/logout"/>
+</menu>

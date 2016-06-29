@@ -1,0 +1,271 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorColoredBackground"
+    tools:context="com.airsoft.goodwin.EnterActivity">
+
+    <ViewFlipper
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/enterScreenFlipper" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/enterMainContent"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:id="@+id/enterButtonsLayout"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:paddingBottom="20dp">
+
+                <Button
+                    android:layout_width="240dp"
+                    android:layout_height="60dp"
+                    android:padding="10dp"
+                    android:text="@string/login"
+                    android:id="@+id/loginButton"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="18sp"
+                    android:onClick="showLoginForm" />
+
+                <Button
+                    android:layout_width="240dp"
+                    android:layout_height="60dp"
+                    android:padding="10dp"
+                    style="@style/LightButtonStyle"
+                    android:text="@string/registration"
+                    android:id="@+id/registrationButton"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="18sp"
+                    android:onClick="showRegistrationForm" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/enterArmyStar"
+                android:src="@drawable/armystar"
+                android:paddingTop="0dp"
+                android:paddingLeft="60dp"
+                android:paddingRight="60dp"
+                android:paddingBottom="200dp"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/enterLoginContent"
+            android:background="#FFFFFF"
+            android:visibility="visible">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:id="@+id/loginPersonalNumberText"
+                android:hint="@string/personalNumber"
+                android:gravity="center_horizontal"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:id="@+id/loginPasswordText"
+                android:hint="@string/password"
+                android:gravity="center_horizontal"
+                android:layout_below="@+id/loginPersonalNumberText"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/loginPasswordText"
+                android:layout_alignRight="@+id/loginPasswordText"
+                android:layout_alignEnd="@+id/loginPasswordText"
+                android:layout_alignLeft="@+id/loginPasswordText"
+                android:layout_alignStart="@+id/loginPasswordText"
+                android:id="@+id/linearLayout2">
+
+                <Button
+                    android:layout_weight=".5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/login"
+                    android:id="@+id/enterLoginSubmitButton"
+                    android:onClick="makeLogin"/>
+
+                <Button
+                    android:layout_weight=".5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cancel"
+                    style="@style/LightButtonStyle"
+                    android:id="@+id/enterLoginCancelButton"
+                    android:onClick="showEnterScreen"/>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/loginArmyStar"
+                android:layout_above="@+id/loginPersonalNumberText"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/armystarcolor" />
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/enterActivityEnterProgressBar"
+                android:layout_below="@+id/linearLayout2"
+                android:layout_centerHorizontal="true"
+                android:indeterminate="true"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/enterRegistrationContent"
+            android:background="#FFFFFF"
+            android:visibility="gone"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="180dp"
+                    android:id="@+id/imageView"
+                    android:src="@drawable/armystarcolor"
+                    android:layout_marginBottom="30dp" />
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:id="@+id/enter_registration_rank"
+                    android:entries="@array/ranks"/>
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:id="@+id/enter_registration_subdivision"
+                    android:entries="@array/subdivisions"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/enter_registration_login"
+                    android:hint="@string/personalNumber" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:ems="10"
+                    android:id="@+id/enter_registration_password"
+                    android:hint="@string/password" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:ems="10"
+                    android:id="@+id/enter_registration_email"
+                    android:hint="@string/email" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/enter_registration_lastname"
+                    android:hint="@string/lastname" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/enter_registration_firstname"
+                    android:hint="@string/firstname" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/enter_registration_middlename"
+                    android:hint="@string/middlename" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/enter_registration_buttons">
+
+                    <Button
+                        android:layout_weight=".5"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/send"
+                        android:id="@+id/enterRegistrationButtonSubmit"
+                        android:layout_gravity="bottom"
+                        android:onClick="makeRegistration" />
+
+                    <Button
+                        android:layout_weight=".5"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cancel"
+                        android:id="@+id/enterRegistrationButtonCancel"
+                        android:layout_gravity="bottom"
+                        style="@style/LightButtonStyle"
+                        android:onClick="showEnterScreen"/>
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:id="@+id/enter_registration_progress_layout"
+                    android:visibility="gone">
+
+                    <ProgressBar
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/enter_registration_progress_bar"
+                        android:indeterminate="false" />
+                </RelativeLayout>
+            </LinearLayout>
+        </ScrollView>
+
+    </ViewFlipper>
+
+</RelativeLayout>

@@ -1,0 +1,80 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.airsoft.goodwin.PrivateOffice.ImageChangerFragment"
+    android:padding="16dp">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/image_changer_old_image_layout">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/image_changer_old_image"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/image_changer_change_image_button"
+            android:src="@drawable/empty_user_photo" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/change_image"
+            android:id="@+id/image_changer_change_image_button"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:nestedScrollingEnabled="false"
+            android:onClick="changeImageOnClick" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/image_changer_new_image_layout"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/image_changer_new_image"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/image_changer_confirm_button" />
+
+        <com.airsoft.goodwin.utils.DragRectView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/image_changer_confirm_button"
+            android:id="@+id/image_changer_area_selector" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/image_changer_shaded_area"
+            android:layout_above="@+id/image_changer_confirm_button"
+            android:visibility="gone" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/confirm"
+            android:id="@+id/image_changer_confirm_button"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:onClick="confirmImageOnClick" />
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/image_changer_confirm_progress_bar"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:indeterminate="false"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+</FrameLayout>

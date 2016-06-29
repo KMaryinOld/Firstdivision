@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="60dp"
+    android:layout_height="60dp"
+    android:background="@drawable/inventory_cell"
+    android:minHeight="20dp"
+    android:minWidth="20dp"
+    android:padding="6dp">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/inventory_cell_image"
+        android:src="@drawable/ic_cube_grey600_48dp" />
+</LinearLayout>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.airsoft.goodwin.PrivateOffice.PrivateOfficeActivity"
+    tools:showIn="@layout/app_bar_private_office"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/private_office_loading_data_layout"
+        android:gravity="center_vertical|center_horizontal"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/private_office_loading_progressbar"
+            android:indeterminate="false" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/private_office_loading_error_layout"
+        android:gravity="center_vertical|center_horizontal"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/server_connection_error"
+            android:id="@+id/private_office_connection_server_error_label"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="clip_vertical|center_horizontal" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/refresh"
+            android:id="@+id/private_office_connection_refresh"
+            android:layout_below="@+id/private_office_connection_server_error_label"
+            android:layout_centerHorizontal="true"
+            android:onClick="reloadButtonOnClick" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/private_office_user_info_fragment_layout">
+
+        <fragment
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:name="com.airsoft.goodwin.UserInfo.UserInfoFragment"
+            android:id="@+id/private_office_user_info_fragment" />
+    </RelativeLayout>
+
+    <include layout="@layout/private_office_additional_information_editing"/>
+
+</LinearLayout>
